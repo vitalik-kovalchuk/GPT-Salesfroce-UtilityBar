@@ -1,0 +1,48 @@
+<template>
+	<div if:true={isLoaded}>
+		<lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+	</div>
+	<div class="parent-message-block" onkeyup={handleEnterMessage}>
+	<div if:false={initData.initSuccess} class="slds-text-heading_medium">
+		In this momet chat  is unable 
+	</div>
+	<div if:true={initData.initSuccess} >
+		<div class="slds-chat-bookend">
+			<span class="slds-icon_container slds-icon-utility-chat slds-chat-icon">
+				<lightning-icon icon-name="utility:chat" alternative-text="Approved" title="Approved" size="xx-small"></lightning-icon>
+			</span>
+			<p>Chat started by
+			  <b>{initData.userName}</b> {initData.currentDate}</p>
+		</div>
+		<div class="slds-p-around_medium lgc-bg input-user-message">
+            <lightning-input type="text" label="Enter you question" onchange={changeUserMessage} value={messageUserInput}></lightning-input>
+        </div>
+		
+		<template for:each={conversation} for:item="dialogItem">
+			<section role="log" class="slds-chat" key={dialogItem.stamp}>
+				<ul class="slds-chat-list">
+					<li class={dialogItem.classSection}>
+					<div class="slds-chat-message">
+						<div class="slds-chat-message__body">
+						<div class={dialogItem.classChat}>
+							<span>{dialogItem.message}</span>
+						</div>
+						<div class="slds-chat-message__meta">
+							{dialogItem.agent} • {dialogItem.dateTime}
+						</div>
+						</div>
+					</div>
+					</li>
+				</ul>
+			</section>
+		</template>
+
+
+
+	
+
+	</div>
+
+	</div>
+
+</template>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <description>Chat GPT</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Chat GPT</masterLabel>
+    <targets>
+        <target>lightning__HomePage</target>
+        <target>lightning__UtilityBar</target>
+    </targets>
+</LightningComponentBundle>
