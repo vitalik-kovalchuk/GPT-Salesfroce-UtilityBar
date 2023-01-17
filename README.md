@@ -1,4 +1,4 @@
-# cahtGPT-Salesfroce-UtilityBar
+# chatGPT-Salesfroce-UtilityBar
 
 Component for integrating chatGPT into your organization
 
